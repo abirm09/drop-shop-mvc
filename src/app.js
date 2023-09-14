@@ -4,7 +4,7 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const createErrors = require("http-errors");
 const morgan = require("morgan");
-const helmet = require("helmet");
+// const helmet = require("helmet");
 const {
   errorResponse,
   successResponse,
@@ -13,9 +13,9 @@ const {
 //middleware
 app.use(cors());
 app.use(cookieParser());
-app.use(helmet());
+// app.use(helmet());
 app.use(express.json());
-app.use(morgan("dev"));
+// app.use(morgan("dev"));
 require("./config/passport");
 
 //default
