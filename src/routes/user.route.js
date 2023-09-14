@@ -16,7 +16,7 @@ const passport = require("passport");
 // /api/user/register
 userRoute.post(
   "/register",
-  // limitRequest,
+  limitRequest,
   userValidate,
   runValidation,
   registerNewUser
@@ -37,11 +37,7 @@ userRoute.post(
 
 //login a user
 // /api/user/login
-userRoute.post(
-  "/login",
-  // limitRequest,
-  loginUser
-);
+userRoute.post("/login", limitRequest, loginUser);
 
 /**
  @body ={
