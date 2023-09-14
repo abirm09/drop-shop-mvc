@@ -3,7 +3,7 @@ const app = express();
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const createErrors = require("http-errors");
-import helmet from "helmet";
+const helmet = require("helmet");
 const morgan = require("morgan");
 // const helmet = require("helmet");
 const {
