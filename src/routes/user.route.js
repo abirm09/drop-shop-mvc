@@ -11,10 +11,11 @@ const limitRequest = require("../middleware/limitRequest");
 const { runValidation } = require("../validation/runValidation");
 const { userValidate } = require("../validation/user.validate");
 const passport = require("passport");
+const app = require("../app");
 
 //register a new user
 // /api/user/register
-userRoute.post(
+app.post(
   "/register",
   // limitRequest,
   userValidate,
@@ -37,10 +38,10 @@ userRoute.post(
 
 //login a user
 // /api/user/login
-userRoute.post(
+app.post(
   "/login",
   // limitRequest,
-  loginUser 
+  loginUser
 );
 
 /**
@@ -53,7 +54,7 @@ userRoute.post(
 
 //get user profile
 // /api/user/profile
-userRoute.get(
+app.get(
   "/profile",
   isTokenAvailable,
   passport.authenticate("jwt", { session: false }),
